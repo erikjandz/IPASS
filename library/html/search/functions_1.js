@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['enablesleep',['enableSleep',['../classmpu6050.html#a766d1a6a4d9af1dc47a21ae91b1ee289',1,'mpu6050']]]
+  ['disablesleep',['disableSleep',['../classmpu6050.html#af945ffe99c421c67cd4e4134a37f99d2',1,'mpu6050']]]
 ];

@@ -71,6 +71,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1938b793c68db02885ef121b0718db54"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#a1938b793c68db02885ef121b0718db54">mpu6050</a> (hwlib::i2c_bus_bit_banged_scl_sda &amp;i2c_bus, uint8_t adress=0x68)</td></tr>
 <tr class="memdesc:a1938b793c68db02885ef121b0718db54"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor  <a href="#a1938b793c68db02885ef121b0718db54">More...</a><br /></td></tr>
 <tr class="separator:a1938b793c68db02885ef121b0718db54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4beff110fd439cee20fe7bbf1d18b5cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#a4beff110fd439cee20fe7bbf1d18b5cf">accel_config</a> (uint8_t value)</td></tr>
+<tr class="memdesc:a4beff110fd439cee20fe7bbf1d18b5cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">change the range of the accelometer  <a href="#a4beff110fd439cee20fe7bbf1d18b5cf">More...</a><br /></td></tr>
+<tr class="separator:a4beff110fd439cee20fe7bbf1d18b5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef4c4ff834f62b2a57342fa6c761f701"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#aef4c4ff834f62b2a57342fa6c761f701">return_formatted_data</a> ()</td></tr>
 <tr class="memdesc:aef4c4ff834f62b2a57342fa6c761f701"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the output of all registers  <a href="#aef4c4ff834f62b2a57342fa6c761f701">More...</a><br /></td></tr>
 <tr class="separator:aef4c4ff834f62b2a57342fa6c761f701"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -80,9 +83,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a766d1a6a4d9af1dc47a21ae91b1ee289"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#a766d1a6a4d9af1dc47a21ae91b1ee289">enableSleep</a> ()</td></tr>
 <tr class="memdesc:a766d1a6a4d9af1dc47a21ae91b1ee289"><td class="mdescLeft">&#160;</td><td class="mdescRight">put the chip in sleep mode  <a href="#a766d1a6a4d9af1dc47a21ae91b1ee289">More...</a><br /></td></tr>
 <tr class="separator:a766d1a6a4d9af1dc47a21ae91b1ee289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2de2ed1159eb80c0fc3d0a273b7e058c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#a2de2ed1159eb80c0fc3d0a273b7e058c">get_position_x</a> ()</td></tr>
-<tr class="memdesc:a2de2ed1159eb80c0fc3d0a273b7e058c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the x position  <a href="#a2de2ed1159eb80c0fc3d0a273b7e058c">More...</a><br /></td></tr>
-<tr class="separator:a2de2ed1159eb80c0fc3d0a273b7e058c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4a85ae4b16557eed6d4d690840f8358"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#ad4a85ae4b16557eed6d4d690840f8358">freeze</a> ()</td></tr>
+<tr class="memdesc:ad4a85ae4b16557eed6d4d690840f8358"><td class="mdescLeft">&#160;</td><td class="mdescRight">put the chip in sleep mode and keep last data  <a href="#ad4a85ae4b16557eed6d4d690840f8358">More...</a><br /></td></tr>
+<tr class="separator:ad4a85ae4b16557eed6d4d690840f8358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1ae3f3cdb9dc19c7ae899c733c9714"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#abd1ae3f3cdb9dc19c7ae899c733c9714">get_position_x</a> ()</td></tr>
+<tr class="memdesc:abd1ae3f3cdb9dc19c7ae899c733c9714"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the x position  <a href="#abd1ae3f3cdb9dc19c7ae899c733c9714">More...</a><br /></td></tr>
+<tr class="separator:abd1ae3f3cdb9dc19c7ae899c733c9714"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac11bddbc6795e1c36b1f89b743ce63ec"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#ac11bddbc6795e1c36b1f89b743ce63ec">get_position_y</a> ()</td></tr>
 <tr class="memdesc:ac11bddbc6795e1c36b1f89b743ce63ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the y position  <a href="#ac11bddbc6795e1c36b1f89b743ce63ec">More...</a><br /></td></tr>
 <tr class="separator:ac11bddbc6795e1c36b1f89b743ce63ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -98,17 +104,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3dd7248a256c2d7f7f465fdc5e4e5da8"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#a3dd7248a256c2d7f7f465fdc5e4e5da8">get_temperature_in_F</a> ()</td></tr>
 <tr class="memdesc:a3dd7248a256c2d7f7f465fdc5e4e5da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the current temperature in degrees Fahrenheit  <a href="#a3dd7248a256c2d7f7f465fdc5e4e5da8">More...</a><br /></td></tr>
 <tr class="separator:a3dd7248a256c2d7f7f465fdc5e4e5da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec7d7275fdb79b4c2e76dea2cdb99763"><td class="memItemLeft" align="right" valign="top"><a id="aec7d7275fdb79b4c2e76dea2cdb99763"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#aec7d7275fdb79b4c2e76dea2cdb99763">get_gyro_x</a> ()</td></tr>
-<tr class="memdesc:aec7d7275fdb79b4c2e76dea2cdb99763"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the value from the x-axis from the gyroscope <br /></td></tr>
+<tr class="memitem:aec7d7275fdb79b4c2e76dea2cdb99763"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#aec7d7275fdb79b4c2e76dea2cdb99763">get_gyro_x</a> ()</td></tr>
+<tr class="memdesc:aec7d7275fdb79b4c2e76dea2cdb99763"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the value from the x-axis from the gyroscope  <a href="#aec7d7275fdb79b4c2e76dea2cdb99763">More...</a><br /></td></tr>
 <tr class="separator:aec7d7275fdb79b4c2e76dea2cdb99763"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad02ed5082341b88fe8f0231bcfe41b99"><td class="memItemLeft" align="right" valign="top"><a id="ad02ed5082341b88fe8f0231bcfe41b99"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#ad02ed5082341b88fe8f0231bcfe41b99">get_gyro_y</a> ()</td></tr>
-<tr class="memdesc:ad02ed5082341b88fe8f0231bcfe41b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the value from the y-axis from the gyroscope <br /></td></tr>
+<tr class="memitem:ad02ed5082341b88fe8f0231bcfe41b99"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#ad02ed5082341b88fe8f0231bcfe41b99">get_gyro_y</a> ()</td></tr>
+<tr class="memdesc:ad02ed5082341b88fe8f0231bcfe41b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the value from the y-axis from the gyroscope  <a href="#ad02ed5082341b88fe8f0231bcfe41b99">More...</a><br /></td></tr>
 <tr class="separator:ad02ed5082341b88fe8f0231bcfe41b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa81a142fcb1ba3a3275bf9e2852434d6"><td class="memItemLeft" align="right" valign="top"><a id="aa81a142fcb1ba3a3275bf9e2852434d6"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#aa81a142fcb1ba3a3275bf9e2852434d6">get_gyro_z</a> ()</td></tr>
-<tr class="memdesc:aa81a142fcb1ba3a3275bf9e2852434d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the value from the z-axis from the gyroscope <br /></td></tr>
+<tr class="memitem:aa81a142fcb1ba3a3275bf9e2852434d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmpu6050.html#aa81a142fcb1ba3a3275bf9e2852434d6">get_gyro_z</a> ()</td></tr>
+<tr class="memdesc:aa81a142fcb1ba3a3275bf9e2852434d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the value from the z-axis from the gyroscope  <a href="#aa81a142fcb1ba3a3275bf9e2852434d6">More...</a><br /></td></tr>
 <tr class="separator:aa81a142fcb1ba3a3275bf9e2852434d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -117,9 +120,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">mpu6050::mpu6050 </td>
@@ -139,27 +139,40 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>constructor </p>
-<p>this is the constructor for a <a class="el" href="classmpu6050.html">mpu6050</a>. if no adress is specified, it uses the adress with the last bit as a zero which means the AD0 pin should be connected to the ground </p>
+<p>this is the constructor for a <a class="el" href="classmpu6050.html">mpu6050</a>. if no adress is specified, it uses the adress with the last bit as a zero which means the AD0 pin should be connected to the ground the chip will be in sleep mode when constructed, to disable sleep, see <a class="el" href="classmpu6050.html#af945ffe99c421c67cd4e4134a37f99d2" title="put the chip out of sleep mode ">disableSleep()</a> </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4beff110fd439cee20fe7bbf1d18b5cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4beff110fd439cee20fe7bbf1d18b5cf">&#9670;&nbsp;</a></span>accel_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mpu6050::accel_config </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>change the range of the accelometer </p>
+<p>this function will change the range of the acceleromter. the default value is 0 value has to be within 0-3. it will make the measurment more or less accurate </p>
+
+</div>
+</div>
 <a id="af945ffe99c421c67cd4e4134a37f99d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af945ffe99c421c67cd4e4134a37f99d2">&#9670;&nbsp;</a></span>disableSleep()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void mpu6050::disableSleep </td>
@@ -168,15 +181,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>put the chip out of sleep mode </p>
-<p>this function will put the <a class="el" href="classmpu6050.html">mpu6050</a> out of sleep mode sleep mode has to be disabled to get data from the accelerometer/gyroscope </p>
+<p>this function will put the <a class="el" href="classmpu6050.html">mpu6050</a> out of sleep mode sleep mode has to be disabled to get reliable data from the accelerometer/gyroscope </p>
 
 </div>
 </div>
@@ -185,9 +193,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void mpu6050::enableSleep </td>
@@ -196,43 +201,110 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>put the chip in sleep mode </p>
-<p>this function puts the chip back in sleep mode. it can be useful if you aren't planning on using the chip anytime soon if disabled, the gyroscope and accelerometer returns 0 but the temperature returns other values which shouldn't be trusted </p>
+<p>this function puts the chip back in sleep mode. it can be useful if you aren't planning on using the chip anytime soon if disabled, the gyroscope and accelerometer returns 0, and the temperature sensor returns 36 but is unreliable </p>
 
 </div>
 </div>
-<a id="a2de2ed1159eb80c0fc3d0a273b7e058c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2de2ed1159eb80c0fc3d0a273b7e058c">&#9670;&nbsp;</a></span>get_position_x()</h2>
+<a id="ad4a85ae4b16557eed6d4d690840f8358"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4a85ae4b16557eed6d4d690840f8358">&#9670;&nbsp;</a></span>freeze()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t mpu6050::get_position_x </td>
+          <td class="memname">void mpu6050::freeze </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
+</div><div class="memdoc">
+
+<p>put the chip in sleep mode and keep last data </p>
+<p>this will put the chip in sleep mode but it won't reset it's registers, which means they will keep the last measurement until sleep mode is disabled again </p>
+
+</div>
+</div>
+<a id="aec7d7275fdb79b4c2e76dea2cdb99763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec7d7275fdb79b4c2e76dea2cdb99763">&#9670;&nbsp;</a></span>get_gyro_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mpu6050::get_gyro_x </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the value from the x-axis from the gyroscope </p>
+<p>this function will return the raw value from the x-axis of the gyroscope </p>
+
+</div>
+</div>
+<a id="ad02ed5082341b88fe8f0231bcfe41b99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad02ed5082341b88fe8f0231bcfe41b99">&#9670;&nbsp;</a></span>get_gyro_y()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mpu6050::get_gyro_y </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the value from the y-axis from the gyroscope </p>
+<p>this function will return the raw value from the y-axis of the gyroscope </p>
+
+</div>
+</div>
+<a id="aa81a142fcb1ba3a3275bf9e2852434d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa81a142fcb1ba3a3275bf9e2852434d6">&#9670;&nbsp;</a></span>get_gyro_z()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mpu6050::get_gyro_z </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the value from the z-axis from the gyroscope </p>
+<p>this function will return the raw value from the z-axis of the gyroscope </p>
+
+</div>
+</div>
+<a id="abd1ae3f3cdb9dc19c7ae899c733c9714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd1ae3f3cdb9dc19c7ae899c733c9714">&#9670;&nbsp;</a></span>get_position_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t mpu6050::get_position_x </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 <p>get the x position </p>
-<p>get the angle of the x-axis of the current position of a <a class="el" href="classmpu6050.html">mpu6050</a> in degrees it can vary between -90 and 90 degrees </p>
+<p>get the angle of the x-axis of the current position of a <a class="el" href="classmpu6050.html">mpu6050</a> in degrees it can vary between -90 and 90 degrees it will be 0 degrees when it is laying, and 90 degrees when it is standing </p>
 
 </div>
 </div>
@@ -241,9 +313,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int8_t mpu6050::get_position_y </td>
@@ -252,15 +321,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>get the y position </p>
-<p>get the angle of the y-axis of the current position of a <a class="el" href="classmpu6050.html">mpu6050</a> in degrees it can vary between -90 and 90 degrees </p>
+<p>get the angle of the y-axis of the current position of a <a class="el" href="classmpu6050.html">mpu6050</a> in degrees it can vary between -90 and 90 degrees it will be 0 degrees when it is laying, and 90 degrees when it is standing </p>
 
 </div>
 </div>
@@ -269,9 +333,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int8_t mpu6050::get_position_z </td>
@@ -280,11 +341,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>get the z position </p>
@@ -297,9 +353,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int16_t mpu6050::get_temperature_in_C </td>
@@ -308,11 +361,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>get the current temperature in degrees Celcius </p>
@@ -325,9 +373,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int16_t mpu6050::get_temperature_in_F </td>
@@ -336,11 +381,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>get the current temperature in degrees Fahrenheit </p>
@@ -353,9 +393,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int16_t mpu6050::get_temperature_in_K </td>
@@ -364,11 +401,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>get the current temperature in degrees Kelvin </p>
@@ -381,9 +413,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void mpu6050::return_formatted_data </td>
@@ -392,11 +421,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>return the output of all registers </p>
@@ -404,8 +428,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="mpu6050_8hpp_source.html">mpu6050.hpp</a></li>
+<li>mpu6050.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

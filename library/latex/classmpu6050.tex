@@ -5,13 +5,17 @@
 \item 
 \hyperlink{classmpu6050_a1938b793c68db02885ef121b0718db54}{mpu6050} (hwlib\+::i2c\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+scl\+\_\+sda \&i2c\+\_\+bus, uint8\+\_\+t adress=0x68)
 \begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+void \hyperlink{classmpu6050_a4beff110fd439cee20fe7bbf1d18b5cf}{accel\+\_\+config} (uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em change the range of the accelometer \end{DoxyCompactList}\item 
 void \hyperlink{classmpu6050_aef4c4ff834f62b2a57342fa6c761f701}{return\+\_\+formatted\+\_\+data} ()
 \begin{DoxyCompactList}\small\item\em return the output of all registers \end{DoxyCompactList}\item 
 void \hyperlink{classmpu6050_af945ffe99c421c67cd4e4134a37f99d2}{disable\+Sleep} ()
 \begin{DoxyCompactList}\small\item\em put the chip out of sleep mode \end{DoxyCompactList}\item 
 void \hyperlink{classmpu6050_a766d1a6a4d9af1dc47a21ae91b1ee289}{enable\+Sleep} ()
 \begin{DoxyCompactList}\small\item\em put the chip in sleep mode \end{DoxyCompactList}\item 
-uint8\+\_\+t \hyperlink{classmpu6050_a2de2ed1159eb80c0fc3d0a273b7e058c}{get\+\_\+position\+\_\+x} ()
+void \hyperlink{classmpu6050_ad4a85ae4b16557eed6d4d690840f8358}{freeze} ()
+\begin{DoxyCompactList}\small\item\em put the chip in sleep mode and keep last data \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{classmpu6050_abd1ae3f3cdb9dc19c7ae899c733c9714}{get\+\_\+position\+\_\+x} ()
 \begin{DoxyCompactList}\small\item\em get the x position \end{DoxyCompactList}\item 
 int8\+\_\+t \hyperlink{classmpu6050_ac11bddbc6795e1c36b1f89b743ce63ec}{get\+\_\+position\+\_\+y} ()
 \begin{DoxyCompactList}\small\item\em get the y position \end{DoxyCompactList}\item 
@@ -23,13 +27,10 @@ int16\+\_\+t \hyperlink{classmpu6050_a8cce3546551572c7518962c193183a17}{get\+\_\
 \begin{DoxyCompactList}\small\item\em get the current temperature in degrees Kelvin \end{DoxyCompactList}\item 
 int16\+\_\+t \hyperlink{classmpu6050_a3dd7248a256c2d7f7f465fdc5e4e5da8}{get\+\_\+temperature\+\_\+in\+\_\+F} ()
 \begin{DoxyCompactList}\small\item\em get the current temperature in degrees Fahrenheit \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classmpu6050_aec7d7275fdb79b4c2e76dea2cdb99763}\label{classmpu6050_aec7d7275fdb79b4c2e76dea2cdb99763}} 
 int \hyperlink{classmpu6050_aec7d7275fdb79b4c2e76dea2cdb99763}{get\+\_\+gyro\+\_\+x} ()
 \begin{DoxyCompactList}\small\item\em get the value from the x-\/axis from the gyroscope \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classmpu6050_ad02ed5082341b88fe8f0231bcfe41b99}\label{classmpu6050_ad02ed5082341b88fe8f0231bcfe41b99}} 
 int \hyperlink{classmpu6050_ad02ed5082341b88fe8f0231bcfe41b99}{get\+\_\+gyro\+\_\+y} ()
 \begin{DoxyCompactList}\small\item\em get the value from the y-\/axis from the gyroscope \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classmpu6050_aa81a142fcb1ba3a3275bf9e2852434d6}\label{classmpu6050_aa81a142fcb1ba3a3275bf9e2852434d6}} 
 int \hyperlink{classmpu6050_aa81a142fcb1ba3a3275bf9e2852434d6}{get\+\_\+gyro\+\_\+z} ()
 \begin{DoxyCompactList}\small\item\em get the value from the z-\/axis from the gyroscope \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -39,60 +40,110 @@ int \hyperlink{classmpu6050_aa81a142fcb1ba3a3275bf9e2852434d6}{get\+\_\+gyro\+\_
 \index{mpu6050@{mpu6050}!mpu6050@{mpu6050}}
 \index{mpu6050@{mpu6050}!mpu6050@{mpu6050}}
 \subsubsection{\texorpdfstring{mpu6050()}{mpu6050()}}
-{\footnotesize\ttfamily mpu6050\+::mpu6050 (\begin{DoxyParamCaption}\item[{hwlib\+::i2c\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+scl\+\_\+sda \&}]{i2c\+\_\+bus,  }\item[{uint8\+\_\+t}]{adress = {\ttfamily 0x68} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily mpu6050\+::mpu6050 (\begin{DoxyParamCaption}\item[{hwlib\+::i2c\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+scl\+\_\+sda \&}]{i2c\+\_\+bus,  }\item[{uint8\+\_\+t}]{adress = {\ttfamily 0x68} }\end{DoxyParamCaption})}
 
 
 
 constructor 
 
-this is the constructor for a \hyperlink{classmpu6050}{mpu6050}. if no adress is specified, it uses the adress with the last bit as a zero which means the A\+D0 pin should be connected to the ground 
+this is the constructor for a \hyperlink{classmpu6050}{mpu6050}. if no adress is specified, it uses the adress with the last bit as a zero which means the A\+D0 pin should be connected to the ground the chip will be in sleep mode when constructed, to disable sleep, see \hyperlink{classmpu6050_af945ffe99c421c67cd4e4134a37f99d2}{disable\+Sleep()} 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classmpu6050_af945ffe99c421c67cd4e4134a37f99d2}\label{classmpu6050_af945ffe99c421c67cd4e4134a37f99d2}} 
+\mbox{\Hypertarget{classmpu6050_a4beff110fd439cee20fe7bbf1d18b5cf}\label{classmpu6050_a4beff110fd439cee20fe7bbf1d18b5cf}} 
+\index{mpu6050@{mpu6050}!accel\+\_\+config@{accel\+\_\+config}}
+\index{accel\+\_\+config@{accel\+\_\+config}!mpu6050@{mpu6050}}
+\subsubsection{\texorpdfstring{accel\+\_\+config()}{accel\_config()}}
+{\footnotesize\ttfamily void mpu6050\+::accel\+\_\+config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+change the range of the accelometer 
+
+this function will change the range of the acceleromter. the default value is 0 value has to be within 0-\/3. it will make the measurment more or less accurate \mbox{\Hypertarget{classmpu6050_af945ffe99c421c67cd4e4134a37f99d2}\label{classmpu6050_af945ffe99c421c67cd4e4134a37f99d2}} 
 \index{mpu6050@{mpu6050}!disable\+Sleep@{disable\+Sleep}}
 \index{disable\+Sleep@{disable\+Sleep}!mpu6050@{mpu6050}}
 \subsubsection{\texorpdfstring{disable\+Sleep()}{disableSleep()}}
-{\footnotesize\ttfamily void mpu6050\+::disable\+Sleep (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void mpu6050\+::disable\+Sleep (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 put the chip out of sleep mode 
 
-this function will put the \hyperlink{classmpu6050}{mpu6050} out of sleep mode sleep mode has to be disabled to get data from the accelerometer/gyroscope \mbox{\Hypertarget{classmpu6050_a766d1a6a4d9af1dc47a21ae91b1ee289}\label{classmpu6050_a766d1a6a4d9af1dc47a21ae91b1ee289}} 
+this function will put the \hyperlink{classmpu6050}{mpu6050} out of sleep mode sleep mode has to be disabled to get reliable data from the accelerometer/gyroscope \mbox{\Hypertarget{classmpu6050_a766d1a6a4d9af1dc47a21ae91b1ee289}\label{classmpu6050_a766d1a6a4d9af1dc47a21ae91b1ee289}} 
 \index{mpu6050@{mpu6050}!enable\+Sleep@{enable\+Sleep}}
 \index{enable\+Sleep@{enable\+Sleep}!mpu6050@{mpu6050}}
 \subsubsection{\texorpdfstring{enable\+Sleep()}{enableSleep()}}
-{\footnotesize\ttfamily void mpu6050\+::enable\+Sleep (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void mpu6050\+::enable\+Sleep (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 put the chip in sleep mode 
 
-this function puts the chip back in sleep mode. it can be useful if you aren\textquotesingle{}t planning on using the chip anytime soon if disabled, the gyroscope and accelerometer returns 0 but the temperature returns other values which shouldn\textquotesingle{}t be trusted \mbox{\Hypertarget{classmpu6050_a2de2ed1159eb80c0fc3d0a273b7e058c}\label{classmpu6050_a2de2ed1159eb80c0fc3d0a273b7e058c}} 
+this function puts the chip back in sleep mode. it can be useful if you aren\textquotesingle{}t planning on using the chip anytime soon if disabled, the gyroscope and accelerometer returns 0, and the temperature sensor returns 36 but is unreliable \mbox{\Hypertarget{classmpu6050_ad4a85ae4b16557eed6d4d690840f8358}\label{classmpu6050_ad4a85ae4b16557eed6d4d690840f8358}} 
+\index{mpu6050@{mpu6050}!freeze@{freeze}}
+\index{freeze@{freeze}!mpu6050@{mpu6050}}
+\subsubsection{\texorpdfstring{freeze()}{freeze()}}
+{\footnotesize\ttfamily void mpu6050\+::freeze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+put the chip in sleep mode and keep last data 
+
+this will put the chip in sleep mode but it won\textquotesingle{}t reset it\textquotesingle{}s registers, which means they will keep the last measurement until sleep mode is disabled again \mbox{\Hypertarget{classmpu6050_aec7d7275fdb79b4c2e76dea2cdb99763}\label{classmpu6050_aec7d7275fdb79b4c2e76dea2cdb99763}} 
+\index{mpu6050@{mpu6050}!get\+\_\+gyro\+\_\+x@{get\+\_\+gyro\+\_\+x}}
+\index{get\+\_\+gyro\+\_\+x@{get\+\_\+gyro\+\_\+x}!mpu6050@{mpu6050}}
+\subsubsection{\texorpdfstring{get\+\_\+gyro\+\_\+x()}{get\_gyro\_x()}}
+{\footnotesize\ttfamily int mpu6050\+::get\+\_\+gyro\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get the value from the x-\/axis from the gyroscope 
+
+this function will return the raw value from the x-\/axis of the gyroscope \mbox{\Hypertarget{classmpu6050_ad02ed5082341b88fe8f0231bcfe41b99}\label{classmpu6050_ad02ed5082341b88fe8f0231bcfe41b99}} 
+\index{mpu6050@{mpu6050}!get\+\_\+gyro\+\_\+y@{get\+\_\+gyro\+\_\+y}}
+\index{get\+\_\+gyro\+\_\+y@{get\+\_\+gyro\+\_\+y}!mpu6050@{mpu6050}}
+\subsubsection{\texorpdfstring{get\+\_\+gyro\+\_\+y()}{get\_gyro\_y()}}
+{\footnotesize\ttfamily int mpu6050\+::get\+\_\+gyro\+\_\+y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get the value from the y-\/axis from the gyroscope 
+
+this function will return the raw value from the y-\/axis of the gyroscope \mbox{\Hypertarget{classmpu6050_aa81a142fcb1ba3a3275bf9e2852434d6}\label{classmpu6050_aa81a142fcb1ba3a3275bf9e2852434d6}} 
+\index{mpu6050@{mpu6050}!get\+\_\+gyro\+\_\+z@{get\+\_\+gyro\+\_\+z}}
+\index{get\+\_\+gyro\+\_\+z@{get\+\_\+gyro\+\_\+z}!mpu6050@{mpu6050}}
+\subsubsection{\texorpdfstring{get\+\_\+gyro\+\_\+z()}{get\_gyro\_z()}}
+{\footnotesize\ttfamily int mpu6050\+::get\+\_\+gyro\+\_\+z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get the value from the z-\/axis from the gyroscope 
+
+this function will return the raw value from the z-\/axis of the gyroscope \mbox{\Hypertarget{classmpu6050_abd1ae3f3cdb9dc19c7ae899c733c9714}\label{classmpu6050_abd1ae3f3cdb9dc19c7ae899c733c9714}} 
 \index{mpu6050@{mpu6050}!get\+\_\+position\+\_\+x@{get\+\_\+position\+\_\+x}}
 \index{get\+\_\+position\+\_\+x@{get\+\_\+position\+\_\+x}!mpu6050@{mpu6050}}
 \subsubsection{\texorpdfstring{get\+\_\+position\+\_\+x()}{get\_position\_x()}}
-{\footnotesize\ttfamily uint8\+\_\+t mpu6050\+::get\+\_\+position\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int8\+\_\+t mpu6050\+::get\+\_\+position\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 get the x position 
 
-get the angle of the x-\/axis of the current position of a \hyperlink{classmpu6050}{mpu6050} in degrees it can vary between -\/90 and 90 degrees \mbox{\Hypertarget{classmpu6050_ac11bddbc6795e1c36b1f89b743ce63ec}\label{classmpu6050_ac11bddbc6795e1c36b1f89b743ce63ec}} 
+get the angle of the x-\/axis of the current position of a \hyperlink{classmpu6050}{mpu6050} in degrees it can vary between -\/90 and 90 degrees it will be 0 degrees when it is laying, and 90 degrees when it is standing \mbox{\Hypertarget{classmpu6050_ac11bddbc6795e1c36b1f89b743ce63ec}\label{classmpu6050_ac11bddbc6795e1c36b1f89b743ce63ec}} 
 \index{mpu6050@{mpu6050}!get\+\_\+position\+\_\+y@{get\+\_\+position\+\_\+y}}
 \index{get\+\_\+position\+\_\+y@{get\+\_\+position\+\_\+y}!mpu6050@{mpu6050}}
 \subsubsection{\texorpdfstring{get\+\_\+position\+\_\+y()}{get\_position\_y()}}
-{\footnotesize\ttfamily int8\+\_\+t mpu6050\+::get\+\_\+position\+\_\+y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int8\+\_\+t mpu6050\+::get\+\_\+position\+\_\+y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 get the y position 
 
-get the angle of the y-\/axis of the current position of a \hyperlink{classmpu6050}{mpu6050} in degrees it can vary between -\/90 and 90 degrees \mbox{\Hypertarget{classmpu6050_aaac23fed6c6abfc50a5e41c5fdcd22e8}\label{classmpu6050_aaac23fed6c6abfc50a5e41c5fdcd22e8}} 
+get the angle of the y-\/axis of the current position of a \hyperlink{classmpu6050}{mpu6050} in degrees it can vary between -\/90 and 90 degrees it will be 0 degrees when it is laying, and 90 degrees when it is standing \mbox{\Hypertarget{classmpu6050_aaac23fed6c6abfc50a5e41c5fdcd22e8}\label{classmpu6050_aaac23fed6c6abfc50a5e41c5fdcd22e8}} 
 \index{mpu6050@{mpu6050}!get\+\_\+position\+\_\+z@{get\+\_\+position\+\_\+z}}
 \index{get\+\_\+position\+\_\+z@{get\+\_\+position\+\_\+z}!mpu6050@{mpu6050}}
 \subsubsection{\texorpdfstring{get\+\_\+position\+\_\+z()}{get\_position\_z()}}
-{\footnotesize\ttfamily int8\+\_\+t mpu6050\+::get\+\_\+position\+\_\+z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int8\+\_\+t mpu6050\+::get\+\_\+position\+\_\+z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -102,7 +153,7 @@ get the angle of the z-\/axis of the current position of a \hyperlink{classmpu60
 \index{mpu6050@{mpu6050}!get\+\_\+temperature\+\_\+in\+\_\+C@{get\+\_\+temperature\+\_\+in\+\_\+C}}
 \index{get\+\_\+temperature\+\_\+in\+\_\+C@{get\+\_\+temperature\+\_\+in\+\_\+C}!mpu6050@{mpu6050}}
 \subsubsection{\texorpdfstring{get\+\_\+temperature\+\_\+in\+\_\+\+C()}{get\_temperature\_in\_C()}}
-{\footnotesize\ttfamily int16\+\_\+t mpu6050\+::get\+\_\+temperature\+\_\+in\+\_\+C (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int16\+\_\+t mpu6050\+::get\+\_\+temperature\+\_\+in\+\_\+C (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -112,7 +163,7 @@ this function will return the current temperature of the chip and surroundings i
 \index{mpu6050@{mpu6050}!get\+\_\+temperature\+\_\+in\+\_\+F@{get\+\_\+temperature\+\_\+in\+\_\+F}}
 \index{get\+\_\+temperature\+\_\+in\+\_\+F@{get\+\_\+temperature\+\_\+in\+\_\+F}!mpu6050@{mpu6050}}
 \subsubsection{\texorpdfstring{get\+\_\+temperature\+\_\+in\+\_\+\+F()}{get\_temperature\_in\_F()}}
-{\footnotesize\ttfamily int16\+\_\+t mpu6050\+::get\+\_\+temperature\+\_\+in\+\_\+F (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int16\+\_\+t mpu6050\+::get\+\_\+temperature\+\_\+in\+\_\+F (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -122,7 +173,7 @@ this function will return the current temperature of the chip and surroundings i
 \index{mpu6050@{mpu6050}!get\+\_\+temperature\+\_\+in\+\_\+K@{get\+\_\+temperature\+\_\+in\+\_\+K}}
 \index{get\+\_\+temperature\+\_\+in\+\_\+K@{get\+\_\+temperature\+\_\+in\+\_\+K}!mpu6050@{mpu6050}}
 \subsubsection{\texorpdfstring{get\+\_\+temperature\+\_\+in\+\_\+\+K()}{get\_temperature\_in\_K()}}
-{\footnotesize\ttfamily int16\+\_\+t mpu6050\+::get\+\_\+temperature\+\_\+in\+\_\+K (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int16\+\_\+t mpu6050\+::get\+\_\+temperature\+\_\+in\+\_\+K (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -132,7 +183,7 @@ this function will return the current temperature of the chip and surroundings i
 \index{mpu6050@{mpu6050}!return\+\_\+formatted\+\_\+data@{return\+\_\+formatted\+\_\+data}}
 \index{return\+\_\+formatted\+\_\+data@{return\+\_\+formatted\+\_\+data}!mpu6050@{mpu6050}}
 \subsubsection{\texorpdfstring{return\+\_\+formatted\+\_\+data()}{return\_formatted\_data()}}
-{\footnotesize\ttfamily void mpu6050\+::return\+\_\+formatted\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void mpu6050\+::return\+\_\+formatted\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -140,6 +191,7 @@ return the output of all registers
 
 this function starts an infinity loop which will format the data of the accelerometer x, y, z , gyroscope x, y, z and the temperature in celcius, kelvin and fahrenheit and print it 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{mpu6050_8hpp}{mpu6050.\+hpp}\end{DoxyCompactItemize}
+\hyperlink{mpu6050_8hpp}{mpu6050.\+hpp}\item 
+mpu6050.\+cpp\end{DoxyCompactItemize}

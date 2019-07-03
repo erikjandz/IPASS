@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mpu6050',['mpu6050',['../classmpu6050.html#a1938b793c68db02885ef121b0718db54',1,'mpu6050']]]
+  ['freeze',['freeze',['../classmpu6050.html#ad4a85ae4b16557eed6d4d690840f8358',1,'mpu6050']]]
 ];
